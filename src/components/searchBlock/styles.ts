@@ -10,4 +10,6 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     paddingVertical: 15,
   },
+  dateText: {marginLeft: 3},
+  text: {fontSize: 15, paddingHorizontal: 0, paddingVertical: 0},
 });

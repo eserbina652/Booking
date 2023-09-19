@@ -1,20 +1,17 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 import StackNavigator from './navigation/StackNavigator';
+import {enGB, registerTranslation} from 'react-native-paper-dates';
+registerTranslation('en-GB', enGB);
+// @ts-ignore
+import {ModalPortal} from 'react-native-modals';
 
 const App = () => {
   return (
     <>
       <StackNavigator />
+      <ModalPortal />
     </>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#004793',
-  },
-});

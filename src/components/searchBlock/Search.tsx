@@ -7,7 +7,7 @@ const Search = () => {
   return (
     <Pressable style={styles.searchContainer}>
       <SearchSvg />
-      <TextInput placeholder={'Enter your destination'} />
+      <TextInput style={styles.text} placeholder={'Enter your destination'} />
     </Pressable>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 import Home from '../screens/Home';
 import Saved from '../screens/Saved';
 import {BookingSvg, HomeSvg, ProfileSvg, SavedSvg} from '../assets/svg';
@@ -10,11 +9,12 @@ import Profile from '../screens/Profile';
 import {NavigationContainer} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
-  const BottomTabs = () => {
-    return (
-      <Tab.Navigator>
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName={ScreensName.HOME}
+        screenOptions={{headerShown: false}}>
         <Tab.Screen
           name={ScreensName.HOME}
           component={Home}
@@ -52,17 +52,6 @@ const StackNavigator = () => {
           }}
         />
       </Tab.Navigator>
-    );
-  };
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name={ScreensName.MAIN}
-          component={BottomTabs}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
     </NavigationContainer>
   );
 };
